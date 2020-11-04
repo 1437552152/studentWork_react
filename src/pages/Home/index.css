@@ -1,0 +1,102 @@
+.Carousel img{
+    width: 100%;
+    height: 150px;
+}
+.Carousel{
+    width:100%
+}
+.goodList{
+    display: flex;
+    position: relative;
+    box-sizing: border-box;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    place-content: flex-start space-between;
+    flex-shrink: 0;
+    overflow: hidden;
+    -webkit-box-pack: justify;
+    -webkit-box-lines: multiple;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: 0 7.5px;
+    background: #f2f2f2;
+    padding-bottom: 12px;
+    margin-bottom:50px;
+}
+
+.recommend_item {
+    height: 260px;
+    position: relative;
+    width: 170.99999999999997px;
+    box-sizing: border-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    align-content: flex-start;
+    flex-shrink: 0;
+    background: #fff;
+    margin-top: 9px;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-left: 4.5px;
+    margin-right: 4.5px;
+}
+
+.recommend_img_wrapper {
+    -webkit-box-align: center;
+    height: 170.99999999999997px;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+.recommend_img {
+    width: 170.99999999999997px;
+    height: 170.99999999999997px;
+}
+.recommend_info {
+    padding-left: 10px;
+    padding-right: 9px;
+    height: 94.00000000000001px;
+    text-decoration: none;
+}
+.recommend_title {
+    margin-top: 11.499999999999998px;
+    height: 37px;
+    position: relative;
+    overflow: hidden;
+    line-height: 18.5px;
+    text-overflow: ellipsis;
+    min-height: 0;
+}
+.recommend_title_p {
+    font-size: 13.000000000000004px;
+    color: #333333;
+}
+.recommend_price_box {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    margin-top: 11px;
+    height: 20px;
+    line-height: 20px;
+}
+.recommend_h {
+    color: #ff5500;
+}
+.recommend_price {
+    font-size: 14px;
+    line-height: 16.000000000000004px;
+    color: #ff5500;
+}
+.recommend_payed {
+    font-size: 11px;
+    color: #999999;
+    margin-top: 2.0000000000000004px;
+}

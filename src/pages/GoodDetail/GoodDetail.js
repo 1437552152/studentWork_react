@@ -24,7 +24,6 @@ export default class GoodDetail extends Component {
         this.props.history.push('/login')
     }
 
-
       goodList.map(item=>{
        if(item.id==this.props.match.params.id){
         this.setState({
@@ -54,7 +53,11 @@ export default class GoodDetail extends Component {
         return (            
           <div style={{ height: "100%" }}>
               <Icon type="arrow-left" onClick={()=>this.props.history.push('/')} style={{fontSize:30,marginTop:"20px",marginLeft:"20px"}}/>
-              <img src={this.state.params.img} style={{width:"100%",marginBottom:"20px"}}/>      
+            <img src={this.state.params.img} style={{ width: "100%", marginBottom: "20px" }} /> 
+            <div>
+              <h1 style={{textAlign:"center"}}> {params.title}</h1>
+              <p style={{ fontSize:"24px",marginLeft:"20px"}}>价格:￥{params.price}</p>
+            </div>
               <div className={styles.header} style={{zIndex:'9999'}}>
                 <div className={`${styles.btnList} ${styles.btnGroup}`}>
                 <Link to="/" ><div><img src={require('../../static/images/img1.png')} /></div>店铺</Link>

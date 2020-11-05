@@ -8,6 +8,7 @@
 import React, { Component } from 'react'
 import style from './index.css';
 import { Link } from 'react-router-dom';
+import { Button } from "antd";
 export default class Overview extends Component {
     constructor(props) {
         super(props)
@@ -29,6 +30,21 @@ export default class Overview extends Component {
         }
     }
 
+
+    cancel = (id) => { 
+        let goodList = JSON.parse(window.localStorage.getItem('goodList'));
+        goodList.map(item => {
+            if (item.id == id) {
+                item.checked = 0
+            }
+        });
+        localStorage.setItem('goodList',JSON.stringify(goodList))
+        goodList = goodList.filter(item => item.checked);
+        this.setState({ goodList });
+        
+    }
+
+
     render() {  
         const { goodList } = this.state;
         return (
@@ -39,15 +55,17 @@ export default class Overview extends Component {
                             <Link className={`${style.recommend_img_wrapper} ${style.triggerClick}`} to={`/goodDetail/${item.id}`}>
                                 <img className={`${style.recommend_img} ${style.lazyload}`} src={item.img} />
                             </Link>
-                            <Link className={`${style.recommend_info} ${style.triggerClick}`} to={`/goodDetail/${item.id}`}>
+                            <a className={`${style.recommend_info} ${style.triggerClick}`} href="javascript:void(0)">
                                 <div className={`${style.recommend_title}`}>
                                     <span className={`${style.recommend_title_p}`}>{item.title}</span>
                                 </div>
                                 <div className={`${style.recommend_price_box}`}>
                                     <span className={`${style.recommend_sign} ${style.recommend_h}`}>￥</span>
-                                    <span className={`${style.recommend_price}`}>{item.price}</span>
+                                    <span className={`${style.recommend_price}`}>{item.price}</span> 
+                                    <Button type="primary" style={{marginLeft:"20px"}} onClick={() => this.cancel(item.id)}>取消收藏</Button>
                                 </div>
-                            </Link>
+                               
+                            </a>
                         </div>
                     }):<div  style={{ height: "100%",fontSize:'26px' }}>暂无收藏</div>}
                 </div>
